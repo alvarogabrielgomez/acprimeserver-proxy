@@ -21,4 +21,4 @@ const proxyServer = http.createServer(function(req, res) {
     });
 });
 
-proxyServer.listen(8000);
+proxyServer.listen(process.env.PORT || 8080);
