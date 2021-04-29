@@ -25,6 +25,7 @@ proxy.on('error', function(e, req, res) {
 });
 
 const proxyServer = http.createServer(function(req, res) {
+    res.writeHead(200, {'Cache-Control': 'max-age=600, public' });
     proxy.web(req, res, {
       target: target
     });
