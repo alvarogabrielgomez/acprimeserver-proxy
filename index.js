@@ -44,7 +44,6 @@ const proxyServer = http.createServer(async function(req, res) {
     } else {
         res.writeHead(404, {'content-type': 'text/html'});
         fs.createReadStream(path.resolve(__dirname, './404.html')).pipe(res);
-        return res.end();
     }
     
 
