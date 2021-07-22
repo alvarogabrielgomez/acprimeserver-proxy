@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Parece que te has perdido en el bosque.</title>
+    <style>
+        :root {
+            --color-bg: #fff;
+            --color-bg-2: #f9fafa;
+            --color-text: #1f203d;
+            --color-bg-pre: #020205;
+            --color-text-pre: #dedede;
+            --color-blue-ac-dark:#161229;
+            --color-blue-ac-lighten:#4b3e8e;
+            --color-blue-ac: #1fa5c7;
+            --color-line: #d6dcdc;
+            --padding-viewport: 5vw;
+            --max-width-container: 1000px;
+        }
+        html {
+            background-color: var(--color-bg-2);
+            color: var(--color-text);
+            font-family: sans-serif;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 var(--padding-viewport);
+            box-sizing: border-box;
+            max-width: var(--max-width-container);
+            margin: auto;
+        }
+        .message {
+            margin: auto;
+            max-width: var(--max-width-container);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="message">
+            <h1>¡Ay!.<br>Parece que te has perdido.</h1>
+            <p>Lamentablemente por aqui no vas a encontrar nada<br></p>
+        </div>
+    </main>
+</body>
+</html>
