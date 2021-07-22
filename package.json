@@ -4,12 +4,20 @@
   "description": "Accentio Prime Server Proxy",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "debug": "cross-env DEBUG=acprimeserverproxy:* node ./index.js"
   },
   "author": "Alvaro Gabriel",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "debug": "^2.6.9",
     "dotenv": "^8.2.0",
-    "http-proxy": "^1.18.1"
+    "express": "^4.17.1",
+    "http-proxy": "^1.18.1",
+    "nconf": "^0.11.3"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.1"
   }
 }

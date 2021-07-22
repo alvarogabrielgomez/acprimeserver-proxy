@@ -1,0 +1,18 @@
+{
+    "server": {
+        "name": "ACPrimeServer-Proxy",
+        "port": 8081
+    },
+    "proxys": [
+        {
+            "name": "Proxy1",
+            "origen": "1.example.com",
+            "target": "anotherexample.com"
+        },
+        {
+            "name": "Proxy2",
+            "origen": "2.example.com",
+            "target": "anotherexample2.com"
+        }
+    ]
+}
