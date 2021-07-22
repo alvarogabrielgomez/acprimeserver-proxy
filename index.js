@@ -42,9 +42,11 @@ const proxyServer = http.createServer(async function(req, res) {
             target: target.url.href
         });
     } else {
-        res.writeHead(404, {'content-type': 'text/html'});
-        res.setHeader('X-Accentio-Proxy', `${serverConfig.name} v${packageJson.version}`);
-        res.setHeader('X-Robots-Tag', 'noindex');
+        res.writeHead(404, {
+            'content-type': 'text/html',
+            'X-Accentio-Proxy': `${serverConfig.name} v${packageJson.version}`,
+            'X-Robots-Tag': 'noindex'
+        });
         fs.createReadStream(path.resolve(__dirname, './404.html')).pipe(res);
     }
     
