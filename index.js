@@ -64,6 +64,7 @@ const proxyServer = http.createServer(async function(req, res) {
 
 });
 
-const port = process.env.PORT || serverConfig.port ? serverConfig.port : 8081;
+const port = process.env.PORT || serverConfig.port;
 
 proxyServer.listen(port);
+console.log('port', port);
