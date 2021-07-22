@@ -16,15 +16,18 @@ const proxy = httpProxy.createProxyServer({
     followRedirects: true
 });
 
-proxy.on('proxyReq', function(proxyReq, req, res, options) {
-    proxyReq.setHeader('X-Accentio-Proxy', `${packageJson.name} v${packageJson.version}`);
-    proxyReq.setHeader('X-Accentio-Proxy-App', 'Test');
-    // proxyReq.setHeader('Cache-Control', 'max-age=86400, public');
-});
+// proxy.on('proxyReq', function(proxyReq, req, res, options) {
+//     proxyReq.setHeader('X-Accentio-Proxy', `${packageJson.name} v${packageJson.version}`);
+//     proxyReq.setHeader('X-Accentio-Proxy-App', 'Test');
+//     // proxyReq.setHeader('Cache-Control', 'max-age=86400, public');
+// });
 
 proxy.on('error', function(e, req, res) {
     console.error('ProxyError', e);
-    res.writeHead(503, {'content-type': 'text/html'});
+    res.writeHead(503, {
+        'content-type': 'text/html',
+        'X-Accentio-Proxy': `${serverConfig.name} v${packageJson.version}`
+    });
     fs.createReadStream(path.resolve(__dirname, './error.html')).pipe(res);
 });
 
